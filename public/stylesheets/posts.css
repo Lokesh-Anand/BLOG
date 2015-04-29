@@ -1,0 +1,28 @@
+
+section {
+  padding: .5em 0;
+}
+
+article {
+  margin: .5em 0;
+  padding: .5em 0;
+  border-top: 2px solid #000;
+}
+
+article header {
+  margin-bottom: 5px;
+}
+
+article header h2 {
+  margin-bottom: 0;
+}
+
+article header .meta {
+  font-size: 12px;
+}
+
+article .image {
+  float: left;
+  padding: 0 10px 10px 0;
+}
+.navbar { min-height: 38px; background-color: #f55e55; }

@@ -1,0 +1,40 @@
+<html>
+<head>
+<style type="text/css">
+h2{
+background-color:#e8e8e8;
+padding:20px;
+margin-top:120px;
+FONT-WEIGHT:BOLD;
+text-align:center;
+}
+
+</style></head>
+<p id="notice"><%= notice %></p>
+<h2><%= @post.title %></h2>
+
+<%= image_tag @post.image.url %>
+<%= image_tag @post.image.url(:medium) %></br></br>
+
+<p>
+  <%= @post.body %>
+</p>
+
+
+<%= link_to 'Edit', edit_post_path(@post),:class=> 'btn btn-primary' %> |
+<%= link_to 'Back', posts_path,:class=> 'btn btn-primary' %>
+<h2>Comments</h2>
+ <div id="comments">
+         <%= render :partial => @post.comments %>
+ </div>
+<%= form_for [@post, Comment.new] do |f| %>
+        <p>
+                <%= f.label :body, "New comment" %><br/>
+                <%= f.text_area :body %>
+        </p>
+        <p><%= f.submit "Add comment",:class=> 'btn btn-primary'  %></p>
+
+
+<% end %>
+
+</html>

@@ -1,0 +1,33 @@
+<div class="authform">
+
+  <%= form_for(@post, :html => { :multipart => true }) do |f| %>
+  <% if @post.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
+
+      <ul>
+      <% @post.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+    
+  <fieldset><p><u>Enter the title of your blog</u></p><div class="form-group">
+    <%= f.label :title %>
+    <%= f.text_field :title,:autofocus=>true,class:'form-control',:id=>"title",placeholder:'TITLE OF YOUR BLOG' %>
+  </div></fieldset>
+  <div class="form-group">
+    <fieldset><p><u>Upload an image</u></p><%= f.label :image %>
+  <%= f.file_field :image %>
+  </div></fieldset>
+  <div class="form-group">
+   <fieldset><p><u>Write the contents of your blog</u></p> <%= f.label :body %>
+    <%= f.text_area :body,:autofocus=>true,class:'form-control',:rows=>10,:cols=>50,:id=> "blogarea",placeholder:'WRITE YOUR BLOG'  %>
+  </div></fieldset>
+  <div class="actions">
+    <%= f.submit 'SUBMIT', :class => 'button right'  %>
+  </div></div>
+<% end %>
+
+</html>

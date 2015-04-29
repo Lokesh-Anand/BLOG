@@ -1,0 +1,52 @@
+<html>
+<head>
+<style type="text/css">
+h1{
+color:black;
+background-color:#e8e8e8;
+padding:60px;
+margin-top:40px;
+text-align:left;
+FONT-WEIGHT:BOLD;
+background-image:url('/images/9.gif');
+
+
+}
+.image{
+float:left;
+}
+
+</style>
+
+</head>
+
+<h1>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspWELCOME TO PHOTO BLOG</h1>
+
+<section>
+
+<% @posts.each do |post| %>
+  <article>
+    <header>
+      <h2><%= post.title %></h2><br>
+    
+<div class="meta">Posted on <time datetime="<%= post.created_at %>"><%= post.created_at.to_s(:post) %></time></div>
+    </header></br></br><?br></br>
+    <div class="image"><img src="<%= post.image.url(:thumb) %>" alt="" /></div>
+    <div class="body"><%= post.body %></div>
+    <footer>
+      <nav>
+        <span><%= link_to 'Show', post,:class=>'btn btn-primary'  %></span>
+        
+   <span><%= link_to 'Edit', edit_post_path(post),
+:class=> 'btn btn-primary' %></span>
+        <span><%= link_to 'Destroy', post, :confirm => 'Are you sure?', :method => :delete,:class=>'btn btn-mini btn-danger' %></span><hr>
+      </nav>
+    </footer>
+  </article>
+<% end %>
+</section>
+
+<br />
+
+<center><%= link_to 'New Post', new_post_path,:class => 'btn btn-large btn-primary' %></center>
+</html>

@@ -1,0 +1,28 @@
+<html>
+<head><style type="text/css">
+h1{
+background-color:#c6e2ff;
+padding:50px;color:orange;
+margin-top:40px;
+margin-bottom:10px;
+text-align:left;
+font-weight:bold;
+background-image:url('/images/6.gif');
+
+}
+
+
+#image { position:absolute; visibility:show; left: 20px; top: 400px; z-index:200; } 
+
+#image1{ position:absolute; visibility:show; left: 1050px; top: 400px; z-index:200; } 
+
+</style></head>
+<div id="image"><img src='/images/2.gif'></div>
+<div id="image1"><img src='/images/3.gif'></div>
+<h1>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspEdit Your Post</h1>
+
+
+<%= render 'form' %>
+
+<center><%= link_to 'Show', @post,:class=> 'btn btn-primary' %> <%= link_to 'Back', posts_path,:class=> 'btn btn-primary' %></center>
+</html>

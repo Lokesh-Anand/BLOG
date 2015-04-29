@@ -1,0 +1,22 @@
+<html>
+<head><style type="text/css">
+
+.image{
+float:left;
+
+}
+
+</style></head>
+<%= div_for comment do %>
+        <p>
+               
+                
+                                             <div class="image"><%= image_tag comment.user.gravatar_url %></div>
+                
+<u> <%= comment.user.email %> </u></br>  <%= comment.body %><br>
+                 <strong>
+                        Posted <%= time_ago_in_words(comment.created_at) %> ago<br><br>
+                </strong>
+        </p>
+<% end %>
+</html>

@@ -1,0 +1,25 @@
+<html>
+<head><style type="text/css">
+body{text-align:center;}
+
+h1{
+background-color:#e8e8e8;
+padding:42px;
+margin-top:40px;
+margin-bottom:10px;
+text-align:left;
+font-weight:bold;
+background-image:url('/images/6.gif');
+
+}#image { position:absolute; visibility:show; left: 20px; top: 400px;  z-index:200; } 
+
+#image1{ position:absolute; visibility:show; left: 1050px; top: 400px;  z-index:200; } 
+
+</style></head>
+<div id="image"><img src='/images/468.gif'></div>
+<div id="image1"><img src='/images/abc.gif'></div>
+<h1>&nbsp&nbsp&nbsp&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp&nbsp&nbspWRITE YOUR BLOG  </h1>
+
+<%= render 'form' %>
+
+<%= link_to 'Back', posts_path,:class=> 'btn btn-primary' %></html>
